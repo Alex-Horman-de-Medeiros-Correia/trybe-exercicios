@@ -1,0 +1,54 @@
+<style>
+ h1, p, h2, h3, ul, ol {
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+    color: orange;
+}
+
+
+body{
+    background-color: black;
+    font-size: 16px;
+    text-align: center;
+}
+
+#descrição, #nome {
+    background-color: rgb(15, 104, 107);
+}
+
+.compete {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    line-height: 40px;
+    text-decoration: solid;
+}
+
+.contends, h1 {
+    background-color: rgb(15, 104, 107);
+    font-weight: bold;
+    line-height: 40px;
+    text-decoration: underline;
+}
+
+p {
+    font-family: monospace
+    
+}
+
+p {
+    font-weight: 600;
+}
+
+p {
+    font-size: 1em;
+}
+
+#foto {
+    border-radius: 100%;
+} 
+
+</style>
