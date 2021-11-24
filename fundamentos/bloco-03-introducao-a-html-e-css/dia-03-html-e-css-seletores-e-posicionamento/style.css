@@ -1,7 +1,21 @@
-<style>
-
 #foto {
     border-radius: 100%;
 }
-        
-</style>
+
+
+
+.pois {
+    background-color: blueviolet;
+    padding: 20px;
+    width: max-content;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+
+
+
+
