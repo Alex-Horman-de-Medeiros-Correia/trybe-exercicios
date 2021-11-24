@@ -11,10 +11,13 @@
     border-radius: 100px;
     color: white;
     text-decoration: none;
+    border: 5px solid black;
+    position: absolute;
+    top: 850px;
     
 }
 
-h1, div {
+h1, div, ul, ol {
     font-family: monospace;
 }
 
@@ -26,6 +29,10 @@ li:hover {
 li:active {
     color: white;
 }
+
+
+
+
 
 
 
