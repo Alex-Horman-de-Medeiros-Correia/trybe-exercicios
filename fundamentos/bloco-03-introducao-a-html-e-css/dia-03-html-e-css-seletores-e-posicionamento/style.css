@@ -14,7 +14,18 @@
     
 }
 
+h1, div {
+    font-family: monospace;
+}
 
+li:hover {
+    background-color:rosybrown;
+}
+
+
+li:active {
+    color: white;
+}
 
 
 
