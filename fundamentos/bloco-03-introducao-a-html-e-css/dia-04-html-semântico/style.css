@@ -1,0 +1,39 @@
+#foto {
+    border-radius: 100%;
+}
+
+
+
+.pois {
+    background-color: blueviolet;
+    padding: 20px;
+    width: max-content;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    border: 5px solid black;
+    position: absolute;
+    top: 850px;
+    
+}
+
+h1, div, ul, ol {
+    font-family: monospace;
+}
+
+li:hover {
+    background-color:rosybrown;
+}
+
+
+li:active {
+    color: white;
+}
+
+
+
+
+
+
+
+
