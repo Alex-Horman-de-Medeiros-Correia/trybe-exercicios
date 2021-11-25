@@ -1,33 +1,63 @@
-#foto {
-    border-radius: 100%;
+
+
+.inicial {
+    display: inline-block;
+    font-size: large;
 }
 
+.sobre {
+    display: inline-block;
+    font-size: large;
+    margin-left: 20px;
+}
 
+.contato {
+    display: inline-block;
+    font-size: large;
+    margin-left: 20px;
+}
 
-.pois {
-    background-color: blueviolet;
-    padding: 20px;
-    width: max-content;
-    border-radius: 100px;
-    color: white;
-    text-decoration: none;
+.link {
+    border-radius: 100%;
     border: 5px solid black;
-    position: absolute;
-    top: 850px;
+}
+
+#clique {
+    display: block;
+    font-size: large;
     
 }
 
-h1, div, ul, ol {
-    font-family: monospace;
+#abaixo {
+    display: block;
+    font-size: large;
 }
 
-li:hover {
-    background-color:rosybrown;
+#nosso {
+    display: block;
+    font-size: large;
 }
 
+#acao {
+    display: block;
+    font-size: large;
+}
 
-li:active {
-    color: white;
+.one {
+    border: 10px solid gray;
+}
+
+.two {
+    border: 10px solid gray;
+}
+
+.three {
+    border: 10px solid gray;
+}
+
+.allarticle {
+    max-width: 350px;
+    
 }
 
 
