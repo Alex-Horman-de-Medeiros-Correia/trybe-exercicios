@@ -1,33 +1,20 @@
-#foto {
-    border-radius: 100%;
+
+
+.inicial {
+    display: inline-block;
+    font-size: large;
 }
 
-
-
-.pois {
-    background-color: blueviolet;
-    padding: 20px;
-    width: max-content;
-    border-radius: 100px;
-    color: white;
-    text-decoration: none;
-    border: 5px solid black;
-    position: absolute;
-    top: 850px;
-    
+.sobre {
+    display: inline-block;
+    font-size: large;
+    margin-left: 20px;
 }
 
-h1, div, ul, ol {
-    font-family: monospace;
-}
-
-li:hover {
-    background-color:rosybrown;
-}
-
-
-li:active {
-    color: white;
+.contato {
+    display: inline-block;
+    font-size: large;
+    margin-left: 20px;
 }
 
 
