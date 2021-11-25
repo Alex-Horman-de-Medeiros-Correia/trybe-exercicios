@@ -17,6 +17,44 @@
     margin-left: 20px;
 }
 
+.link {
+    border-radius: 100%;
+    border: 5px solid black;
+}
+
+#clique {
+    display: block;
+    font-size: large;
+    
+}
+
+#abaixo {
+    display: block;
+    font-size: large;
+}
+
+#nosso {
+    display: block;
+    font-size: large;
+}
+
+#acao {
+    display: block;
+    font-size: large;
+}
+
+.one {
+    border: 10px solid gray;
+}
+
+.two {
+    border: 10px solid gray;
+}
+
+.three {
+    border: 10px solid gray;
+}
+
 
 
 
