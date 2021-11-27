@@ -1,9 +1,8 @@
-const myName = "Alex";
-const birthCity = "João Pessoa";
-birthCity = "Itabaiana"; //recebemos uma mensagem de erro pq uma constante permanece fiel à sua atribuição inicial.
-let birthYear = 1990;
-birthYear = 2030;
+const base = 5;
+let height = 8;
 
-console.log(myName);
-console.log(birthCity);
-console.log(birthYear);
+const area = base * height;
+
+const perimeter = (base + height) * 2;
+
+console.log(perimeter);
