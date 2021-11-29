@@ -1,27 +1,10 @@
+let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
 
-let atividadesDoDia = ['comer', 'correr', 'tomar banho', 'estudar'];
+menu.push('Sobre nós');
 
-//let primeiraAtividade = atividadesDoDia[0];
-    //console.log(primeiraAtividade);
+menu.unshift('Curiosidades');
 
-atividadesDoDia.push ('dormir enfim');
-
-atividadesDoDia.unshift ('lavar rosto');
-
-atividadesDoDia.pop();
-
-atividadesDoDia.shift();
-
-let indexAtividades = atividadesDoDia.indexOf('estudar');
-    console.log(indexAtividades);
-
-    //console.log(atividadesDoDia);
-
-
-//for (let index = 0; index < atividadesDoDia.length; index += 1) {
-    //console.log(atividadesDoDia[index]);
-//}
-
+console.log(menu);
 
 
 
