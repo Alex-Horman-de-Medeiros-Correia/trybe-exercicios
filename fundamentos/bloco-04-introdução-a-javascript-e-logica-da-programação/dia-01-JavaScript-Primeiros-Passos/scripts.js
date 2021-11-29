@@ -1,10 +1,24 @@
 
-const nota =  67;
+let candidato = "lista";
 
-if (nota >= 80) {
-    console.log("parabens, você foi aprovado");
-}else if(nota < 80 && nota >= 60) {
-    console.log("você está na lista de espera");
-}else{
-    console.log("você foi reprovado");
+switch(candidato) {
+    case "aprovado":
+    console.log("parabéns");
+    break;
+
+    case "lista":
+    console.log("não perca a fé");
+    break;
+
+    case "reprovado":
+    console.log("tenta novamente em outra oportunidade");
+    break;
+
+    default:
+        console.log("resultado indefinido");
+
+
 }
+
+
+
