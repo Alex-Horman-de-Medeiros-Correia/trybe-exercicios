@@ -1,12 +1,10 @@
 
-let trybe = 14;
+const nota =  67;
 
-if (trybe >= 14 && trybe < 14.40) {
-    console.log("esquenta");
-}else if (trybe >= 16.20 && trybe < 18) {
-    console.log("aula ao vivo");
-}else if(trybe >= 19.40 && trybe < 20) {
-    console.log("fechamento");
+if (nota >= 80) {
+    console.log("parabens, você foi aprovado");
+}else if(nota < 80 && nota >= 60) {
+    console.log("você está na lista de espera");
 }else{
-    console.log("momento assincrono");
+    console.log("você foi reprovado");
 }
