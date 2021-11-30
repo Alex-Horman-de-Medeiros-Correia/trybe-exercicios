@@ -1,15 +1,18 @@
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let numeros = [];
 
-let numeroMaisAlto = 0;
-
-for (let index = 0; index < numbers.length; index += 1) {
-    if (numbers[index] > numeroMaisAlto) {
-        numeroMaisAlto = numbers[index];
-    }
-    
+for(let i = 1; i <= 25; i += 1) {
+    numeros.push(i);
 }
 
-console.log(numeroMaisAlto);
+//console.log(numeros);
+
+for(let index = 0; index < numeros.length; index += 1) {
+    //numeros[index] / 2;
+
+    //console.log(numeros);
+
+    console.log(numeros[index] / 2);
+}
 
 
 
