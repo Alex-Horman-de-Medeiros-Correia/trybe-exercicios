@@ -100,7 +100,7 @@
 
 
 
-      let player = {
+   /*    let player = {
           name: 'Alex',
           lastName: 'Horman',
           age: '31',
@@ -118,7 +118,33 @@
 
       console.log('o jogador ' + player.name + ' ' + player.lastName + ' foi eleito o melhor do mundo por ' + player.medals.golden + ' vezes, sendo campeão em ' + player.bestInTheWorld[0] + ',' + player.bestInTheWorld[1] + ',' + player.bestInTheWorld[2]);
 
-      console.log('o jogador possui ' + player.medals.golden + ' medalhas de ouro e ' + player.medals.silver + ' medalhas de prata!');
+      console.log('o jogador possui ' + player.medals.golden + ' medalhas de ouro e ' + player.medals.silver + ' medalhas de prata!'); */
+
+
+
+
+
+
+
+
+
+      /* let pizzas = {
+          sabor: 'chocolate',
+          preco: 20.90,
+          bordaRecheada: true
+      };
+
+      for(let propriedades in pizzas){
+          console.log(pizzas[propriedades]);
+
+      } */
+
+
+      let pizzasDoces = ['morango', 'coco', 'baunilha'];
+
+      for(let key in pizzasDoces) {
+          console.log(key, pizzasDoces[key]);
+      }
 
 
 
