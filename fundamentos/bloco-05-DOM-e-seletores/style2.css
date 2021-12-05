@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
   }
   
@@ -49,4 +49,43 @@
     font-weight: 700;
     padding: 15px;
     text-align: center;
+  } */
+
+
+
+
+
+  main, section {
+    border-color: black;
+    border-style: solid;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .main-content {
+    background-color: yellow;
+  }
+
+  .main-content .center-content {
+    background-color: red;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .main-content .center-content p {
+    font-style: italic;
+  }
+
+  #modificarTexto {
+      margin-left: 185px;
+      font-size: 20px;
+      
+  }
+
+  .poder {
+      text-align: center;
+      
+
   }
