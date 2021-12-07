@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="maisInfos()" >Mais Informações</button>
+
+    <p id="trybeContinua" ></p>
+
+    <script>
+
+        window.onload = apocalipse;
+
+        alert("o céu ficou vermelho");
+
+        function apocalipse(){
+            alert("meteoros estão caindo!!!");
+            alert("Bruce Willis está indo destrui-los");
+            alert("Toca Aerosmith");
+        }
+
+       /*  window.onload = jsCarregado;
+
+        function jsCarregado() {
+            alert("página foi carregada");
+        } */
+
+        function maisInfos(){
+            let textoMaisInfo = document.getElementById("trybeContinua");
+            textoMaisInfo.innerText = 'Aqui você vai aprender mais sobre eventos no javascript';
+        }
+
+    </script>
+
+
+</body>
+</html>
