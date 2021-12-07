@@ -40,12 +40,27 @@ for (let i = 0; i < engredientes.length; i += 1){
 
     let listNaoOrdenada = document.createElement('li');
     listNaoOrdenada.innerText = itensTotais;
+    listNaoOrdenada.className = 'remover';
 
     ingredients.appendChild(listNaoOrdenada);
 }
 
 
-//Segundo exemplo:
+
+
+/* let leiteRemove = document.querySelectorAll('.remover')
+
+for (let i = 0; i < leiteRemove.length; i += 1){
+    let leiteProcess = leiteRemove[i];
+
+    if(leiteProcess.innerText.includes('leite')){
+        ingredients.removeChild(listNaoOrdenada);
+    }
+} */
+
+
+
+/* //Segundo exemplo:
 
 let paragrafo = 'Vamos com tudo! Hora de brilhar!!!';
 
@@ -107,9 +122,20 @@ for (let i = 0; i < coisas.length; i += 1){
 
     let tagNova = document.createElement('li');
     tagNova.innerText = coisasFinal;
+    tagNova.className = 'tudoJunto';
 
     naoOrdenada.appendChild(tagNova);
 }
+
+let pokemonRemove = document.querySelectorAll('.tudoJunto');
+
+for (let i = 0; i < pokemonRemove.length; i += 1){
+    let tudoAqui = pokemonRemove[i];
+
+    if(tudoAqui.innerText.includes('pikachu')){
+        naoOrdenada.removeChild(tudoAqui);
+    }
+} */
 
 
 
