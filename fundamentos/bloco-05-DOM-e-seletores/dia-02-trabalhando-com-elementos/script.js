@@ -90,6 +90,28 @@ for (let i = 0; i < listaUnica.length; i += 1){
 }
 
 
+//quinto exemplo:
+
+let coisas = [
+    'cachorro',
+    'gato',
+    'urubu',
+    'vaca',
+    'pikachu',
+];
+
+let naoOrdenada = document.querySelector("#qualquerLista");
+
+for (let i = 0; i < coisas.length; i += 1){
+    let coisasFinal = coisas[i];
+
+    let tagNova = document.createElement('li');
+    tagNova.innerText = coisasFinal;
+
+    naoOrdenada.appendChild(tagNova);
+}
+
+
 
 
 
