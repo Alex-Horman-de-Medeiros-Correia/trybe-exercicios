@@ -37,6 +37,66 @@
 
     </script>
 
+    <p id="identy" >Clique aqui para saber mais!</p>
 
+
+
+    <div>
+        <button id="mouseOverLeave" >botão para ter o mouse passado por cima e removido</button>
+    </div>
+
+
+
+    <script>
+
+
+        let clique = document.getElementById("identy");
+
+        clique.addEventListener("click", recebeClick);
+        clique.addEventListener("mouseover", mouseEmCima);
+        clique.addEventListener("mouseleave", mouseFora);
+
+        function recebeClick(evento){
+            console.log(evento.target);
+            console.log(evento.type); 
+}
+
+
+
+
+
+
+        let mouseOverLeaveBotton = document.getElementById("mouseOverLeave");
+
+        mouseOverLeaveBotton.addEventListener("mouseover", mouseEmCima);
+
+        function mouseEmCima(evento){
+            console.log("O mouse está em cima, só clicar");
+            console.log(evento.target);
+            console.log(evento.type);
+        }
+
+        mouseOverLeaveBotton.addEventListener("mouseleave", mouseFora);
+
+        function mouseFora (){
+            console.log("O mouse está fora do botão pretendido, idiota");
+        } 
+
+
+
+
+        
+
+        let conteudoBotton = document.getElementById("mouseOverLeave");
+
+        conteudoBotton.addEventListener("click", clicada);
+
+        function clicada(){
+            let texto = document.getElementById("vazio");
+            texto.innerText = "Tudo que tu vê quer clicar né, safado?";
+        }
+    </script>
+
+    <p id="vazio" ></p>
 </body>
 </html>
