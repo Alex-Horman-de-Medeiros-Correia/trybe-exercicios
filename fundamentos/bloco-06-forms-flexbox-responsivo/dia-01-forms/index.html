@@ -8,10 +8,177 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>FORMULÁRIO</h1>
+    <!-- <h1>FORMULÁRIO</h1>
+
     <form action="" method="get" >
-        <input type="text" name="texto">
+        <label for="input-texto">Digite seu nome, rápido!</label>
+        <input type="text" placeholder="digite alguma coisa, otário" required name="texto" id="input-texto" >
         <button type="submit">enviar</button>
+        <br>
+        <label for="textarea-id">Digite aqui sua experiência</label>
+        <textarea name="textao" id="textarea-id" cols="30" rows="10"></textarea>
+        <br>
+        <label for="">Qual a sua formação anterior?</label>
+        <input type="checkbox" value="Dir" name="superior" id="">Direito
+        <input type="checkbox" value="Astro" name="superior" id="">Astrofísica
+        <input type="checkbox" value="Med" name="superior" id="">Medicina
+        <input type="checkbox" value="Eng" name="superior" id="">Engenharia
+        <button type="submit" >enviar</button>
+
+        <br>
+        <br>
+        <label for="">Cidade onde nasceu...</label>
+        <label for="idum"><input type="radio" value="jp" name="cidade" id="idum">João Pessoa</label>
+        <label for="iddois"><input type="radio" value="cp" name="cidade" id="iddois">Campina Grande</label>
+        <label for="idtres"><input type="radio" value="ita" name="cidade" id="idtres">Itabaiana</label>
+        <label for="idquatro"><input type="radio" value="rf" name="cidade" id="idquatro">Recife</label>
+
+        <br>
+        <br>
+        <label for="dropdown-persona">Tipo de pessoa que você é?</label>
+        <select name="tipo" id="dropdown-persona">
+            <option value="extro">extrovertido</option>
+            <option value="tim">tímido</option>
+            <option value="quit">quieto</option>
+            <option value="estou">estourado</option>
+        </select>
+        <button type="submit" >Enviar</button>
+
+        <br>
+        <br>
+
+        <input type="password" name="" id="" placeholder="digite aqui sua senha" required>
+
+        <br>
+        <br>
+
+        <input type="file" name="" id="">
+
+    </form> -->
+
+    <!-- <form action="" method="get">
+        <label for="emailaqui">Usuário:</label>
+        <br>
+        <input type="email" name="email" id="emailaqui" placeholder="Digite aqui seu email" autocomplete="off" autofocus required >
+
+        <br>
+        <br>
+
+        <label for="senhaaqui">Senha:</label>
+        <br>
+        <input type="password" name="senha" id="senhaaqui" placeholder="Sua senha aqui" required >
+
+        <br>
+        <br>
+
+        <input type="checkbox" name="senha gravada" id="senhaaqui">Lembre-me da senha
+
+        <br>
+        <br>
+
+        <button type="submit" >Entrar</button>
+
+    </form> -->
+
+
+    <h1>Formulário</h1>
+    <form action="" method="get" enctype="multipart/form-data" >
+
+        <label for="pessona">Digite aqui seu nome:
+            <br>
+            <br>
+            <input type="text" name="nomeCompleto" id="pessona" placeholder="Digite seu nome completo" required >
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <label for="inputemail">Digite aqui seu email:
+            <br>
+            <br>
+            <input type="email" name="email" id="inputemail" placeholder="Digite seu email correto" required >
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <label for="lugarSelect">Qual o seu estado?
+            <br>
+            <br>
+            <select name="localização" id="lugarSelect">
+                <option value="pb">Paraíba</option>
+                <option value="sp">São Paulo</option>
+                <option value="rj">Rio de Janeiro</option>
+                <option value="mg">Minas Gerais</option>
+                <option value="sc">Santa Catarina</option>
+            </select>
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <label for="fotoInput">Selecione uma foto para perfil:
+            <br>
+            <br>
+            <input type="file" name="arquivo" id="fotoInput">
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <p>Hobby favorito:</p>
+    
+        <label for="hobby01">
+            <input type="radio" name="hobby-favorito" id="hobby01" value="games">Jogar video-game
+        </label>
+
+        <label for="hobby02">
+            <input type="radio" name="hobby-favorito" id="hobby02" value="livros">Ler livros
+        </label>
+
+        <label for="hobby03">
+            <input type="radio" name="hobby-favorito" id="hobby03" value="cinema">Ir ao cinema
+        </label>
+
+        <label for="hobby04">
+            <input type="radio" name="hobby-favorito" id="hobby04" value="séries">Assistir Séries
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <h3>Escreva algo sobre você:</h3>
+
+        <textarea name="texto" id="textoInput" cols="30" rows="5"></textarea>
+
+        <br>
+        <br>
+        <br>
+
+        <p>Digite sua senha:</p>
+
+        <label for="senhaInput">
+            <input type="password" name="senha" id="senhaInput" placeholder="Digite aqui sua senha completa!"  required>
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <label for="box-adcional">
+            <input type="checkbox" name="opçãoEmpresa" id="box-adcional" >Deseja receber notificações adcionais?
+        </label>
+
+        <br>
+        <br>
+        <br>
+
+        <button type="submit" >Enviar Formulário</button>
 
     </form>
 
