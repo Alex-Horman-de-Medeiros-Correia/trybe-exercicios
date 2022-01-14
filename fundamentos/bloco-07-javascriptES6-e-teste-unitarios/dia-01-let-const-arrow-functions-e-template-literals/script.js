@@ -292,7 +292,7 @@ console.log(fatorial(4)); */
 console.log(longestWord('vamos lá galera animada')); */
 
 
-let cliques = 0;
+/* let cliques = 0;
 
 const botaoo = document.querySelector(".clica");
 const paragrafo = document.querySelector(".paragra");
@@ -304,7 +304,11 @@ const imprimeConsole = () => {
     console.log(paragrafo.innerHTML);
 }
 
-botaoo.addEventListener('click', imprimeConsole);
+botaoo.addEventListener('click', imprimeConsole); */
+
+
+
+
 
 
 
