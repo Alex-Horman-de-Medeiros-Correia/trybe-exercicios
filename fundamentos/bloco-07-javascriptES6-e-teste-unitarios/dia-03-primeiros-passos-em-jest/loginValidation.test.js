@@ -44,32 +44,37 @@ describe('remove sabor de bebida', () => {
 }); */
 
 
-/* const sum = require('./loginValidation');
-const soma = require('./loginValidation');
 
-test ('adiciona 1 e 2 e retorna 3', () => {
-  expect(soma(1,2)).toBe(3);
+
+
+const {sommationOf, sum} = require('./loginValidation');
+
+
+describe('the fuction sum', () =>{
+  test ('adiciona 1 e 2 e retorna 3', () => {
+    expect(sum(1,2)).toBe(3);
+  });
+  
+  test('adciona -33 e 23 e retorna -10', () => {
+    expect(sum(-33, 23)).toBe(-10);
+  });
 });
 
-test('adciona -33 e 23 e retorna -10', () => {
-  expect(soma(-33, 23)).toBe(-10);
-}); */
 
-
-const sommationOf = require('./loginValidation');
-
-test ('testar se a função sommationOf existe', () => {
-  expect(typeof sommationOf).toBe('function');
-});
-
-test ('espera que a somatoria de 1 seja 1', () => {
-  expect(sommationOf(1)).toBe(1);
-});
-
-test ('espera que a somatoria de 3 seja 6', () => {
-  expect(sommationOf(3)).toBe(6);
-});
-
-test ('espera que a somatoria de 5 seja 15', () => {
-  expect(sommationOf(5)).toBe(15);
+describe('the function sommationOf', () => {
+  test ('testar se a função sommationOf existe', () => {
+    expect(typeof sommationOf).toBe('function');
+  });
+  
+  test ('espera que a somatoria de 1 seja 1', () => {
+    expect(sommationOf(1)).toBe(1);
+  });
+  
+  test ('espera que a somatoria de 3 seja 6', () => {
+    expect(sommationOf(3)).toBe(6);
+  });
+  
+  test ('espera que a somatoria de 5 seja 15', () => {
+    expect(sommationOf(5)).toBe(15);
+  });
 });
