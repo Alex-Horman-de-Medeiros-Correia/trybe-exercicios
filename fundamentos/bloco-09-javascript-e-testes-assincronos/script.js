@@ -339,3 +339,69 @@ sendMarsTemperature(temperatureInFahrenheit, handleError);
 sendMarsTemperature(greet, handleError); */
 
 
+//FETCH API & ASYNC/AWAIT - 
+
+//API's - aplication programming interface - Uma API não é um banco de dados ou um servidor, não, uma API é a ponte que conecta as aplicações aos bancos de dados e servidores! Quando você está em um certo aplicativo e então clica na opção de compartilhar algo em alguma rede social, você se utiliza da API para a realização desse comunicação, acessando um banco de dados em um servidor e, dessa forma, reproduzindo os dados solicitados (request/pedido) na forma de um post em alguma rede social (resposta/response).
+
+//uma API é sempre um BACK-END, mas nem todo BACK-END é uma API. Um back-end padrão nos retorna um template, um arquivo HTML, por exemplo, rodando no front-end de uma aplicação. Uma API, no entanto, não precisam retornar templates, mas dados no formato JSON. (JSON - Java Script Object Notation). As API's retornam dados no formato JSON para manter uma alta escalabilidade (multi-linguagem) e independência.
+
+
+/* const jsonInfo = `{
+  "muitasEmpresasUsam": [
+    "Google",
+    "Twitter",
+    "Facebook",
+    "etc..."
+  ],
+  "temVariasVantagens": [
+    "Legível",
+    "Fácil de usar",
+    "Leve",
+    "Popular",
+    "Versátil"
+  ],
+  "muitasLinguagensDaoSuporte": [
+    "Python",
+    "C",
+    "C++",
+    "Java",
+    "PHP"
+  ]
+}`;
+
+const usoJSONPorque = JSON.parse(jsonInfo);
+
+const corporationsList = document.getElementById('corporations-used-by');
+const advantagesList = document.getElementById('advantages');
+const languagesList = document.getElementById('languages-used-by');
+
+usoJSONPorque.muitasEmpresasUsam.map((empresa) => {
+  const newLi = document.createElement('li');
+  newLi.innerText = empresa;
+  corporationsList.appendChild(newLi);
+});
+
+usoJSONPorque.temVariasVantagens.map((vantagens) => {
+  const newLi = document.createElement('li');
+  newLi.innerText = vantagens;
+  advantagesList.appendChild(newLi);
+});
+
+usoJSONPorque.muitasLinguagensDaoSuporte.map((linguagens) => {
+  const newLi = document.createElement('li');
+  newLi.innerText = linguagens;
+  languagesList.appendChild(newLi);
+}); */
+
+
+//funções assincronas, diferente das sincronas, não precisam esperar na ordenada fila de funções, onde uma após a outra aguarda a sua vez para enfim funcionar. Não. As funções assincronas, justamente por possuírem um tempo específico para que cumpram suas obrigações, são justamente realocadas em um lugar à parte da fila de funções, retornando para a fila APENAS quando seu tempo de execução expirar.
+
+//Como colocar uma ordem de chamada nas funções assincronas? Para isso desenvolveram as CALLBACKS, onde uma função poderia ser chamada por outra no lugar de um parâmetro, assim ordernando a trabalho das funções.
+
+//PROMISES = OPÇÃO que veio para substituir as CALLBACKS, pois as callbacks podem crescer ao ponto de tornar o código extramamente complexo, resultando no chamado CALLBACKS HELL.
+
+
+//FETCH API = fetch() - é usada para fazer a chamada de uma URL de uma API. É uma função assincrona.
+
+//fetch() é uma função que possui ou pode possuir dois parâmetros. Uma é o URL DO SERVIÇO ALVO DA REQUISIÇÃO, e o outro um objeto com certas informações sobre o serviço alvo da requisição.
+
