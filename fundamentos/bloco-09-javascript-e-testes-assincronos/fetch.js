@@ -106,8 +106,86 @@ function append(data) {
   ul.appendChild(li);
 }
 
-//PARTE 2 - REFATORANDO COM FETCH API
+
+//PARTE 4 - REFATORANDO O FETCH API MAIS E MAIS!
+
+function objectNameAndImage(data) {
+  return {
+    name: data.name,
+    imageUrl: data.sprites.front_default,
+  }
+}
+
+  function fetchPokemon(pokemon) {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    .then((response) => response.json())
+  }
+
+/* function fetchPokemon(pokemon) {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+
+    .then((response) => response.json())
+    .then((data) => {
+      const pokemon = objectNameAndImage(data);
+      append(pokemon);
+    })
+    .catch((error) => console.log(error));
+  } */
+
+  function requestPokemon() {
+    Promise.all([
+      fetchPokemon('charmeleon'),
+      fetchPokemon('pikachu'),
+      fetchPokemon('ditto'),
+      fetchPokemon('squirtle'),
+      fetchPokemon('bulbasaur')
+    ])
+
+    .then((pokemonList) => {
+      const poke = pokemonList.map((element) => {
+        return objectNameAndImage(element);
+      })
+      poke.forEach((pokemon) => {
+          append(pokemon);
+        })
+      })
+  }
+
+
+
+
+//PARTE 3 - REFATORANDO O FETCH API AINDA MAIS
+
+/* function objectNameAndImage(data) {
+  return {
+    name: data.name,
+    imageUrl: data.sprites.front_default,
+  }
+}
+
 function fetchPokemon(pokemon) {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+
+    .then((response) => response.json())
+    .then((data) => {
+      const pokemon = objectNameAndImage(data);
+      append(pokemon);
+    })
+    .catch((error) => console.log(error));
+  }
+
+  function requestPokemon() {
+    fetchPokemon('charmeleon'),
+    fetchPokemon('pikachu'),
+    fetchPokemon('ditto'),
+    fetchPokemon('squirtle'),
+    fetchPokemon('bulbasaur')
+  } */
+
+
+
+//PARTE 2 - REFATORANDO COM FETCH API
+/* function fetchPokemon(pokemon) {
   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
     .then((response) => response.json())
@@ -118,8 +196,16 @@ function fetchPokemon(pokemon) {
       }
       append(pokemon);
     })
+    .catch((error) => console.log(error));
   }
 
+  function requestPokemon() {
+    fetchPokemon('charmeleon'),
+    fetchPokemon('pikachu'),
+    fetchPokemon('ditto'),
+    fetchPokemon('squirtlee'),
+    fetchPokemon('bulbasaur')
+  } */
 
 
 //PARTE 1 - FAZENDO COM FETCH API
@@ -139,4 +225,6 @@ function fetchPokemon(pokemon) {
   })
 } */
 
-window.onload = fetchPokemon('charmeleon');
+
+window.onload = requestPokemon;
+/* window.onload = requestPokemon; */
