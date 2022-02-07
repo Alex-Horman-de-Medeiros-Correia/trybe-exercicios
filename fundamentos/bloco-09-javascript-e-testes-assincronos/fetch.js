@@ -78,10 +78,10 @@ fetchJoke();
 //complexidade desnecessária de código, dificultando a leitura do mesmo, ocassionando assim o chamado callback hell.
 
 /* const starWarsQuote = () => {
-	const url = 'http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote';
-	  fetch(url)
-	    .then(response => response.json())
-	    .then(data => document.getElementById('quote-container').innerText = data.starWarsQuote)
+  const url = 'http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote';
+    fetch(url)
+      .then(response => response.json())
+      .then(data => document.getElementById('quote-container').innerText = data.starWarsQuote)
             .catch(error => console.log(error))
 }; */
 
@@ -107,7 +107,7 @@ function append(data) {
 }
 
 
-//PARTE 4 - REFATORANDO O FETCH API MAIS E MAIS!
+//PARTE 5 - REFATORANDO COM O ASYNC AWAIT!
 
 function objectNameAndImage(data) {
   return {
@@ -116,115 +116,157 @@ function objectNameAndImage(data) {
   }
 }
 
-  function fetchPokemon(pokemon) {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+function fetchPokemon(pokemon) {
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then((response) => response.json())
-  }
+}
 
-/* function fetchPokemon(pokemon) {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
-    .then((response) => response.json())
-    .then((data) => {
-      const pokemon = objectNameAndImage(data);
-      append(pokemon);
-    })
-    .catch((error) => console.log(error));
-  } */
-
-  function requestPokemon() {
-    Promise.all([
+async function requestPokemon() {
+  
+  try {
+    const pokemonList = await Promise.all([
       fetchPokemon('charmeleon'),
       fetchPokemon('pikachu'),
       fetchPokemon('ditto'),
       fetchPokemon('squirtle'),
       fetchPokemon('bulbasaur')
     ])
-
-    .then((pokemonList) => {
-      const poke = pokemonList.map((element) => {
-        return objectNameAndImage(element);
-      })
-      poke.forEach((pokemon) => {
-          append(pokemon);
-        })
-      })
+  
+    const pokeData = pokemonList.map((arrayPokemon) => {
+      return objectNameAndImage(arrayPokemon);
+    })
+  
+    pokeData.forEach((object) => {
+      append(object);
+    }) 
+  } catch(error) {
+    console.log(error);
   }
 
-
-
-
-//PARTE 3 - REFATORANDO O FETCH API AINDA MAIS
-
-/* function objectNameAndImage(data) {
-  return {
-    name: data.name,
-    imageUrl: data.sprites.front_default,
-  }
 }
 
-function fetchPokemon(pokemon) {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
-    .then((response) => response.json())
-    .then((data) => {
-      const pokemon = objectNameAndImage(data);
-      append(pokemon);
-    })
-    .catch((error) => console.log(error));
+
+
+  //PARTE 4 - REFATORANDO O FETCH API MAIS E MAIS!
+
+  /* function objectNameAndImage(data) {
+    return {
+      name: data.name,
+      imageUrl: data.sprites.front_default,
+    }
   }
+  
+    function fetchPokemon(pokemon) {
+      return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+      .then((response) => response.json())
+    }
+  
+  /* function fetchPokemon(pokemon) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+  
+      .then((response) => response.json())
+      .then((data) => {
+        const pokemon = objectNameAndImage(data);
+        append(pokemon);
+      })
+      .catch((error) => console.log(error));
+    }
+  
+    function requestPokemon() {
+      Promise.all([
+        fetchPokemon('charmeleon'),
+        fetchPokemon('pikachu'),
+        fetchPokemon('ditto'),
+        fetchPokemon('squirtle'),
+        fetchPokemon('bulbasaur')
+      ])
+  
+      .then((pokemonList) => {
+        const poke = pokemonList.map((element) => {
+          return objectNameAndImage(element);
+        })
+        poke.forEach((pokemon) => {
+            append(pokemon);
+          })
+        })
+    } */
 
-  function requestPokemon() {
-    fetchPokemon('charmeleon'),
-    fetchPokemon('pikachu'),
-    fetchPokemon('ditto'),
-    fetchPokemon('squirtle'),
-    fetchPokemon('bulbasaur')
+
+
+
+  //PARTE 3 - REFATORANDO O FETCH API AINDA MAIS
+
+  /* function objectNameAndImage(data) {
+    return {
+      name: data.name,
+      imageUrl: data.sprites.front_default,
+    }
+  }
+  
+  function fetchPokemon(pokemon) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+  
+      .then((response) => response.json())
+      .then((data) => {
+        const pokemon = objectNameAndImage(data);
+        append(pokemon);
+      })
+      .catch((error) => console.log(error));
+    }
+  
+    function requestPokemon() {
+      fetchPokemon('charmeleon'),
+      fetchPokemon('pikachu'),
+      fetchPokemon('ditto'),
+      fetchPokemon('squirtle'),
+      fetchPokemon('bulbasaur')
+    } */
+
+
+
+  //PARTE 2 - REFATORANDO COM FETCH API
+  /* function fetchPokemon(pokemon) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+  
+      .then((response) => response.json())
+      .then((data) => {
+        const pokemon = {
+          name: data.name,
+          imageUrl: data.sprites.front_default,
+        }
+        append(pokemon);
+      })
+      .catch((error) => console.log(error));
+    }
+  
+    function requestPokemon() {
+      fetchPokemon('charmeleon'),
+      fetchPokemon('pikachu'),
+      fetchPokemon('ditto'),
+      fetchPokemon('squirtlee'),
+      fetchPokemon('bulbasaur')
+    } */
+
+
+  //PARTE 1 - FAZENDO COM FETCH API
+  /* function fetchPokemon(pokemon) {
+    const promise = (fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`));
+  
+    promise.then((response) => {
+      const responseJson = response.json();
+  
+      responseJson.then((data) => {
+        const pokemon = {
+          name: data.name,
+          imageUrl: data.sprites.front_default,
+        }
+        append(pokemon);
+      })
+    })
   } */
 
 
-
-//PARTE 2 - REFATORANDO COM FETCH API
-/* function fetchPokemon(pokemon) {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-
-    .then((response) => response.json())
-    .then((data) => {
-      const pokemon = {
-        name: data.name,
-        imageUrl: data.sprites.front_default,
-      }
-      append(pokemon);
-    })
-    .catch((error) => console.log(error));
-  }
-
-  function requestPokemon() {
-    fetchPokemon('charmeleon'),
-    fetchPokemon('pikachu'),
-    fetchPokemon('ditto'),
-    fetchPokemon('squirtlee'),
-    fetchPokemon('bulbasaur')
-  } */
-
-
-//PARTE 1 - FAZENDO COM FETCH API
-/* function fetchPokemon(pokemon) {
-  const promise = (fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`));
-
-  promise.then((response) => {
-    const responseJson = response.json();
-
-    responseJson.then((data) => {
-      const pokemon = {
-        name: data.name,
-        imageUrl: data.sprites.front_default,
-      }
-      append(pokemon);
-    })
-  })
-} */
-
-
-window.onload = requestPokemon;
-/* window.onload = requestPokemon; */
+  window.onload = requestPokemon;
+/* window.onload = requestPokemon;*/
