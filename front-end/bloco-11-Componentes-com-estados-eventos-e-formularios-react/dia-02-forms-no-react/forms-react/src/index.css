@@ -1,0 +1,58 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form {
+  display: flex;
+  flex-flow: wrap column;
+  text-align: center;
+}
+
+label {
+  margin: 10px 10px;
+}
+
+input {
+  margin-top: 5px;
+}
+
+textarea {
+  margin-top: 5px;
+}
+
+select {
+  margin-top: 5px;
+}
+
+fieldset {
+  min-width: min-content;
+  margin: 10px 500px;
+  border-radius: 20px;
+  background-color: rgb(194, 238, 194);
+}
+
+.botao {
+  padding: 10px;
+  margin: 10px 500px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(117, 228, 117);
+  border: 4px solid rgb(37, 35, 35);
+  border-radius: 20px;
+}
+
+.botao:hover {
+  padding: 15px;
+  margin: 10px 480px;
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: rgb(117, 228, 117);
+  border: 4px solid rgb(37, 35, 35);
+  border-radius: 20px;
+}
