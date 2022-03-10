@@ -1,21 +1,20 @@
 import React from 'react';
-import ComponentePai from './ComponentePai';
+import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import Content from './Content';
+import Header from './Header';
+import Sidebar from './Sidebar';
 
 class App extends React.Component {
 
-
-  
-
-
   render() {
     return (
-      <div className='main'>
-        <ComponentePai>
-          <p>SUPIMPA</p>
-          <h1>BACANA</h1>
-          <span>INCRIVEL</span>
-        </ComponentePai>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Content />
+          <Header />
+          <Sidebar />
+        </div>
+      </BrowserRouter>
     )
   }
 }
