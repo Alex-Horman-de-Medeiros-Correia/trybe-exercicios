@@ -1,0 +1,17 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "callback": "node promisesAndCallbacks/callback.js",
+    "promises": "node promisesAndCallbacks/promises.js",
+    "async": "node promisesAndCallbacks/async.js"
+  },
+  "author": "Alex-Horman",
+  "license": "ISC",
+  "devDependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
