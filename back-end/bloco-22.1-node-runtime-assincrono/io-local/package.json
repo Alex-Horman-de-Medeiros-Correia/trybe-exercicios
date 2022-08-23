@@ -1,0 +1,13 @@
+{
+  "name": "io-local",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "readFileSync": "node readFileSync.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
