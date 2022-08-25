@@ -1,0 +1,19 @@
+{
+  "name": "bloco-22.3-novo-testes-de-integracao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "importando.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
