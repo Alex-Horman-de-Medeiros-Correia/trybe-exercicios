@@ -1,0 +1,25 @@
+{
+  "name": "typescript-tipagem-estatica-e-generics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.8.3",
+    "mysql2": "^2.3.3",
+    "sequelize-cli": "^6.5.1"
+  },
+  "dependencies": {
+    "@types/readline-sync": "^1.4.4",
+    "@types/sequelize": "^4.28.14",
+    "dotenv": "^16.0.3",
+    "readline-sync": "^1.4.10",
+    "sequelize": "^6.24.0"
+  }
+}
