@@ -1,47 +1,50 @@
-class Pessoa {
-    nome: String;
-    private _idade: Number;
-    private _peso: Number;
-    readonly altura: Number;
+class Tv {
+    private _brand: String; //marca da TV;
+    private _size: Number;  // tamanho em polegadas;
+    private _resolution: Number;  // resolução da tela;
+    private _connections: String[];  // conexões disponíveis(HDMI, Ethernet, etc.);
+    private _connectedTo?: String; // conexão atual Este atributo não precisa ser inicializado no construtor.
 
+    constructor(brand: String, size: Number, resolution: Number, connections: String[], connectedTo: String) {
+        this._brand = brand;
+        this._size = size;
+        this._resolution = resolution;
+        this._connections = connections;
+        this._connectedTo = connectedTo;
+    };
 
-    constructor(nome: String, idade: Number, peso: Number, altura: Number) {
-        this.nome = nome;
-        this._idade = idade;
-        this._peso = peso;
-        this.altura = altura;
+    turnOn() {
+        console.log(
+            `marca da Tv: ${ this._brand },
+            tamanho em polegadas: ${ this._size },
+            resolução da tela: ${ this._resolution },
+            tipos de conexões: ${ this._connections }!`
+            );   
     }
 
-    pegarIdade() {
-        return this._idade; 
+    get connectedTo() {
+        return this._connectedTo;
     }
 
-    get meuPeso() {
-        return this._peso; 
-    }
-
-    set idade(novaIdade: Number) {
-        if (novaIdade >= 0 && novaIdade < 200) {
-            this._idade = novaIdade;
+    set setterConnected(newValue: string) {
+        if (!newValue || this._connections.includes(newValue)) {
+            this._connectedTo = newValue;
+            console.log(`resultado do setter: ${ this._connectedTo }`);
+        } else {
+            console.log('Sorry, connection unavailable!');
         }
     }
-
 }
 
-const p1 = new Pessoa('Alex', 32, 85, 175);
+const tvCaracteristicas = new Tv('Samsung', 156, 1920, [ 'HDMI', 'wi-fi' ], 'HDMI');
 
-p1.nome = 'Alexxxx';
-console.log(p1.nome); // acesso de variavel publica
+tvCaracteristicas.turnOn();
 
-console.log(p1.pegarIdade()); // metodo publico tentando manipular atributo privado
+tvCaracteristicas.connectedTo;
+console.log(tvCaracteristicas.connectedTo);
 
-console.log(p1.meuPeso); // manipular atributo privado com se fosse publico
 
-p1.idade = 17;
-console.log(`nova idade: ${ p1.idade }`); // metodo com setter para manipular atributo privado como se fosse publico
-
-console.log(`randolyn: ${ p1.altura }`);
-
+tvCaracteristicas.setterConnected = 'cabos';
 
 
 

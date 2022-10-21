@@ -1,28 +1,34 @@
 "use strict";
-class Pessoa {
-    constructor(nome, idade, peso, altura) {
-        this.nome = nome;
-        this._idade = idade;
-        this._peso = peso;
-        this.altura = altura;
+class Tv {
+    constructor(brand, size, resolution, connections, connectedTo) {
+        this._brand = brand;
+        this._size = size;
+        this._resolution = resolution;
+        this._connections = connections;
+        this._connectedTo = connectedTo;
     }
-    pegarIdade() {
-        return this._idade;
+    ;
+    turnOn() {
+        console.log(`marca da Tv: ${this._brand},
+            tamanho em polegadas: ${this._size},
+            resolução da tela: ${this._resolution},
+            tipos de conexões: ${this._connections}!`);
     }
-    get meuPeso() {
-        return this._peso;
+    get connectedTo() {
+        return this._connectedTo;
     }
-    set idade(novaIdade) {
-        if (novaIdade >= 0 && novaIdade < 200) {
-            this._idade = novaIdade;
+    set setterConnected(newValue) {
+        if (!newValue || this._connections.includes(newValue)) {
+            this._connectedTo = newValue;
+            console.log(`resultado do setter: ${this._connectedTo}`);
+        }
+        else {
+            console.log('Sorry, connection unavailable!');
         }
     }
 }
-const p1 = new Pessoa('Alex', 32, 85, 175);
-p1.nome = 'Alexxxx';
-console.log(p1.nome); // acesso de variavel publica
-console.log(p1.pegarIdade()); // metodo publico tentando manipular atributo privado
-console.log(p1.meuPeso); // manipular atributo privado com se fosse publico
-p1.idade = 17;
-console.log(`nova idade: ${p1.idade}`); // metodo com setter para manipular atributo privado como se fosse publico
-console.log(`randolyn: ${p1.altura}`);
+const tvCaracteristicas = new Tv('Samsung', 156, 1920, ['HDMI', 'wi-fi'], 'HDMI');
+tvCaracteristicas.turnOn();
+tvCaracteristicas.connectedTo;
+console.log(tvCaracteristicas.connectedTo);
+tvCaracteristicas.setterConnected = 'cabos';
