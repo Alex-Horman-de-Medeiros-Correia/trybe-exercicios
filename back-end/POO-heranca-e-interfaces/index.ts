@@ -1,32 +1,21 @@
-class Superclass {
+interface MyInterface {
+    myNumber: number,
+    myFunc(myParam: number): string,
+}
 
-    constructor(public isSuper: boolean) { this.isSuper = true }
+class myClass implements MyInterface {
+    constructor(public myNumber: number) {}
 
-    sayHello() {
-        console.log('Olá, mundo!');
+    myFunc(myParam: number): string {
+        return `${ myParam + this.myNumber } é o resultado!`
     }
 }
 
-class SubClass extends Superclass {
 
-    constructor() {
-        super()
-        this.isSuper = false;
-    }
 
-}
+const num = new myClass(32);
 
-const myFunc = (objeto: Superclass) => {
+console.log(num.myFunc(30));
 
-    objeto.sayHello();
 
-    console.log(objeto.isSuper ? 'Super!' : 'Sub!');
-    
 
-}
-
-const supe = new Superclass();
-const sub = new SubClass();
-
-myFunc(supe);
-myFunc(sub);
