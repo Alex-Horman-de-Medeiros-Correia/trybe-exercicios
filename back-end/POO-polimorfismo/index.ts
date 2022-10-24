@@ -1,38 +1,43 @@
-class Animal {
-
-    constructor(public nome: string, public idade: number) {};
-
-    mover() {
-        console.log(`o ${ this.nome } está se movendo`);
-    }
-
-    age() {
-        console.log(`o ${ this.nome } possui ${ this.idade } anos de idade`);
-    }
+abstract class Character {
+    abstract talk(): void;
+    abstract specialMove(): void;
 }
 
-class felino extends Animal{
-    mover() {
-        super.age();
-        console.log(`o ${ this.nome } está ronronando`);
+class MeleeCharacter extends Character {
+    constructor(public nome: string, private special: string) {
+        super();
     }
-}
 
-class inseto extends Animal {
-    mover() {
-        super.mover(); // aqui o método mover se mantém intacto conforme definido na superclasse
-        console.log(`a ${ this.nome } está zumbindo`);
+    talk(): void {
+        console.log(`o personagem ${ this.nome } está falando`);
+    }
+
+    specialMove(): void {
+        console.log(`poder especial de curto alcance: ${ this.special }`);
     }
 }
 
-const an = new Animal('humano', 100);
-const fe = new felino('gato', 10);
-const ins = new inseto('abelha', 1);
+class LongRangeCharacter extends Character {
+    constructor(public nome: string, private special: string) {
+        super();
+    }
 
-const myFunc = (animal: Animal) => {
-    return animal.mover();
+    talk(): void {
+        console.log(`o personagem ${ this.nome } está falando`);
+    }
+
+    specialMove(): void {
+        console.log(`poder especial de longo alcance: ${ this.special }`);
+    }
 }
 
-myFunc(an);
-myFunc(fe);
-myFunc(ins);
+const myFunc = (character: Character) => {
+    character.talk();
+    character.specialMove();
+}
+
+const curto = new MeleeCharacter('Sagat', 'laminas');
+const longo = new LongRangeCharacter('Ryu', 'haduken');
+
+myFunc(curto);
+myFunc(longo);
