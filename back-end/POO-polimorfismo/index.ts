@@ -1,84 +1,136 @@
-interface Pessoa {
-    id: number,
-    name: string,
-    showIdentification(): void,
+interface Personagem {
+    nome: string,
+    Especial: string,
 }
 
-class PessoaFisica implements Pessoa {
-    private static lastId = 0;
-    private _name;
-    private _id;
-    private _cpf;
+interface umPersonagem extends Personagem {
+    id: number;
+}
 
-    constructor(name: string, cpf: string) {
-        this._id = PessoaFisica.newId();
-        this._name = name;
-        this._cpf = cpf;
+const db: umPersonagem[] = [];
+
+
+interface IModel {
+    create: (per: Personagem) => Promise<umPersonagem>;
+    update: (id: number, per: Personagem) => Promise<umPersonagem>
+    delete: (id: number) => Promise<boolean>
+    getAll: () => Promise<umPersonagem[]>
+    getById: (id: number) => Promise<umPersonagem>
+}
+
+class LocalDbModel implements IModel {
+    create = async (per: Personagem) => {
+        const lastId = db.length > 0 ? db[ db.length - 1 ].id : 0;
+
+        const novoPersonagem = { id: lastId + 1, ...per };
+
+        db.push(novoPersonagem);
+
+        return novoPersonagem;
+    }   
+
+    findIndexById = (id: number) => {
+        const byId = db.findIndex((personagem) => personagem.id === id);
+
+        if(byId < 0) { throw new Error('Personagem não encontrado!') }
+
+        return byId;
     }
 
-    private static newId() {
-        return this.lastId++;
+    update = async (id: number, per: Personagem) => {
+        const indexUp = this.findIndexById(id);
+
+        const up = db[ indexUp ] = { ...db[indexUp], ...per };
+
+        return up;
     }
 
-    get id() { return this._id };
-    get name() { return this._name };
-    get cpf() { return this._cpf };
+    delete = async (id: number) => {
+        const deleteById = this.findIndexById(id);
 
-    showIdentification(): void {
-        console.log(this.id, this._cpf);
+        const del = db.splice(deleteById, 1);
+
+        if (del.length > 0) { return true };
+
+        return false;
+    }
+
+    getAll = async () => {
+        return db;
+    }
+
+    getById = async (id: number) => {
+        const getBy = this.findIndexById(id);
+
+        return db[ getBy ]
+    };
+}
+
+class CharacterService {
+    constructor(readonly model: IModel) {};
+
+    async create(per: Personagem) {
+        const novoPersonagem = await this.model.create(per);
+
+        return ({ status: 201, data: novoPersonagem })
+    }
+
+    async getAll() {
+        const todos = await this.model.getAll();
+
+        return ({ status: 200, data: todos });
+    }
+
+    async delete (id: number) {
+        const deletar = await this.model.delete(id);
+
+        return ({ status: 200, data: deletar });
+    }
+
+    async update (id: number, per: Personagem) {
+        const modificar = await this.model.update(id, per);
+
+        return ({ status: 200, data: modificar });
+    }
+
+    async getById (id: number) {
+        const peloId = await this.model.getById(id);
+
+        return ({ status: 200, data: peloId });
     }
 }
 
-class PessoaJur implements Pessoa {
-    private static lastId = 0;
-    private _name;
-    private _id;
-    private _cnpj;
+class MockedDbModel implements IModel {
 
-    constructor(name: string, cnpj: string) {
-        this._id = PessoaJur.newId();
-        this._name = name;
-        this._cnpj = cnpj;
-    }
-
-    private static newId() {
-        return this.lastId++;
-    }
-
-    get id() { return this._id };
-    get name() { return this._name };
-    get cnpj() { return this._cnpj };
-
-    showIdentification(): void {
-        console.log(this.id, this._cnpj);
-    }
+    async create(per: Personagem) {
+        console.log('per created');
+        return { id: 1, nome: 'Peach', Especial: 'Toad' };
+      }
+    
+      async update(id: number, per: Personagem) {
+        console.log('per updated');
+        return { id: 1, nome: 'Yoshi', Especial: 'Egg Lay' };
+      }
+    
+      async delete(id: number) {
+        console.log('per deleted');
+        return true;
+      }
+    
+      async getAll() {
+        return [
+          { id: 1, nome: 'Samus', Especial: 'Charge Shot' },
+          { id: 2, nome: 'Kirby', Especial: 'Inhale' },
+        ];
+      }
+    
+      async getById(id: number) {
+        return { id: 1, nome: 'Mario', Especial: 'Fireball' };
+      }
 }
 
-class Contrato<T> {
-    static _number = 0;
+const A = new CharacterService(new LocalDbModel());
+A.getAll().then(console.log);
 
-    constructor(public corretor: T) {}
-
-    static get number() { return this._number }
-}
-
-
-const pf1 = new PessoaFisica('alex', '6666666666');
-const pf2 = new PessoaFisica('andre', '77777777777');
-const pj1 = new PessoaJur('aledrethur', '9999999999');
-const pj2 = new PessoaJur('ltda barra', '55555555555');
-
-const myfunc = (identification: Pessoa) => {
-    identification.showIdentification();
-}
-
-myfunc(pf1);
-myfunc(pf2);
-myfunc(pj1);
-myfunc(pj2);
-
-const c1 = new Contrato(pf1);
-console.log(`${ c1.corretor.name } possui contrato ativo, de cpf ${ c1.corretor.cpf }`);
-
-const c2: Contrato<PessoaJur> = new Contrato(pj1);
-console.log(`${ c2.corretor.name } possui contrato ativo, de cnpj ${ c2.corretor.cnpj }`);
+const B = new CharacterService(new MockedDbModel());
+B.getAll().then(console.log);
